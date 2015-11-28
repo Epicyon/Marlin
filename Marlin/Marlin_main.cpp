@@ -3509,6 +3509,7 @@ inline void gcode_M31() {
 
 #endif // SDSUPPORT
 
+
 /**
  * M42: Change pin status via GCode
  */
@@ -3523,6 +3524,7 @@ inline void gcode_M42() {
     for (uint8_t i = 0; i < COUNT(sensitive_pins); i++) {
       if (sensitive_pins[i] == pin_number) {
         pin_number = -1;
+        SERIAL_PROTOCOLLNPGM("Unable to set sensitive pin");
         break;
       }
     }

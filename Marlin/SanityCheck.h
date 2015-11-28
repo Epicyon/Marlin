@@ -177,8 +177,8 @@
         // Make sure probing points are reachable
         #if LEFT_PROBE_BED_POSITION < MIN_PROBE_X
           #error "The given LEFT_PROBE_BED_POSITION can't be reached by the Z probe."
-        #elif RIGHT_PROBE_BED_POSITION > MAX_PROBE_X
-          #error "The given RIGHT_PROBE_BED_POSITION can't be reached by the Z probe."
+#elif RIGHT_PROBE_BED_POSITION > MAX_PROBE_X
+#error "The given RIGHT_PROBE_BED_POSITION can't be reached by the Z probe."
         #elif FRONT_PROBE_BED_POSITION < MIN_PROBE_Y
           #error "The given FRONT_PROBE_BED_POSITION can't be reached by the Z probe."
         #elif BACK_PROBE_BED_POSITION > MAX_PROBE_Y
