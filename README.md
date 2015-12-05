@@ -1,3 +1,24 @@
+# Local Changes
+
+I've been making a number of modifications to my Rova3D and found I needed an up to date Marlin.  
+
+It's up to date with 1.1.0RC3 released Dec 1, 2015.
+
+It's *not* plug and play for a stock Rova3D.
+
+My changes: 
+
+  * My T3 screw connector somehow came loose from the PCB so I moved the pin assignments around in Marlin so pin ordering is different from stock
+  * I installed a proximity sensor for Z min to get auto bed level/tramming (primary impetus to get up to date Marlin)
+  * Replaced the stock hotends with an E3D kraken ( I also have a Diamond hotend on the way.)
+  * Added a cooling fan to HE8
+
+Resources:
+
+  * [Pin assignments for the Azteeg X3 Pro] (http://files.panucatt.com/datasheets/x3pro_pins_reva.pdf)
+  * [Schematic for Azteeg X3 Pro] (http://files.panucatt.com/datasheets/x3pro_wiring.pdf)
+
+
 # Marlin 3D Printer Firmware
 <img align="top" width=175 src="Documentation/Logo/Marlin%20Logo%20GitHub.png" />
  Additional documentation can be found in [our wiki](https://github.com/MarlinFirmware/Marlin/wiki/Main-Page).
