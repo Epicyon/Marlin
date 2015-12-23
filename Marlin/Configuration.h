@@ -215,9 +215,16 @@ Here are some standard links for getting your machine calibrated:
 
   //Kraken
   //M301 P30.87 I2.59 D92.04
-  #define  DEFAULT_Kp 30.87
-  #define  DEFAULT_Ki 2.59
-  #define  DEFAULT_Kd 92.04
+  /* #define  DEFAULT_Kp 30.87 */
+  /* #define  DEFAULT_Ki 2.59 */
+  /* #define  DEFAULT_Kd 92.04 */
+
+//Diamond Hotend
+//M301 P30.87 I2.59 D92.04
+#define  DEFAULT_Kp 62.14
+#define  DEFAULT_Ki 6.87
+#define  DEFAULT_Kd 140.49
+
 
   // ORD Solutions - Rova3D Stock Heated Bed
   #define DEFAULT_bedKp 1123.78

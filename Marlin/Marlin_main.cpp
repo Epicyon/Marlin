@@ -3798,6 +3798,8 @@ inline void gcode_M104() {
   if (code_seen('S')) {
     float temp = code_value();
     setTargetHotend(temp, target_extruder);
+    setTargetHotend(temp, 1);
+    setTargetHotend(temp, 2);
     #if ENABLED(DUAL_X_CARRIAGE)
       if (dual_x_carriage_mode == DXC_DUPLICATION_MODE && target_extruder == 0)
         setTargetHotend1(temp == 0.0 ? 0.0 : temp + duplicate_extruder_temp_offset);

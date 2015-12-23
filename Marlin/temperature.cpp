@@ -227,12 +227,14 @@ void PID_autotune(float temp, int extruder, int ncycles) {
 
   SERIAL_ECHOLN(MSG_PID_AUTOTUNE_START);
 
-  disable_all_heaters(); // switch off all heaters.
+  //disable_all_heaters(); // switch off all heaters.
 
   if (extruder < 0)
     soft_pwm_bed = bias = d = MAX_BED_POWER / 2;
   else
     soft_pwm[extruder] = bias = d = PID_MAX / 2;
+    soft_pwm[1] = bias = d = PID_MAX / 2;
+    soft_pwm[2] = bias = d = PID_MAX / 2;
 
   // PID Tuning loop
   for (;;) {
@@ -261,6 +263,8 @@ void PID_autotune(float temp, int extruder, int ncycles) {
             soft_pwm_bed = (bias - d) >> 1;
           else
             soft_pwm[extruder] = (bias - d) >> 1;
+            soft_pwm[1] = (bias - d) >> 1;
+            soft_pwm[2] = (bias - d) >> 1;
           t1 = ms;
           t_high = t1 - t2;
           max = temp;
@@ -316,6 +320,8 @@ void PID_autotune(float temp, int extruder, int ncycles) {
             soft_pwm_bed = (bias + d) >> 1;
           else
             soft_pwm[extruder] = (bias + d) >> 1;
+            soft_pwm[1] = (bias + d) >> 1;
+            soft_pwm[2] = (bias + d) >> 1;
           cycles++;
           min = temp;
         }
@@ -1118,6 +1124,8 @@ void disable_all_heaters() {
   for (int i = 0; i < EXTRUDERS; i++) setTargetHotend(0, i);
   setTargetBed(0);
 
+  SERIAL_ECHOPGM("Disabling all heaters.");
+
   #define DISABLE_HEATER(NR) { \
     target_temperature[NR] = 0; \
     soft_pwm[NR] = 0; \
@@ -1127,7 +1135,7 @@ void disable_all_heaters() {
   #if HAS_TEMP_0
     target_temperature[0] = 0;
     soft_pwm[0] = 0;
-    WRITE_HEATER_0P(LOW); // Should HEATERS_PARALLEL apply here? Then change to DISABLE_HEATER(0)
+    DISABLE_HEATER(0); //WRITE_HEATER_0P(LOW); // Should HEATERS_PARALLEL apply here? Then change to DISABLE_HEATER(0)
   #endif
 
   #if EXTRUDERS > 1 && HAS_TEMP_1
