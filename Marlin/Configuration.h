@@ -375,7 +375,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = true; // set to true to invert the lo
 // @section extruder
 
 #define DISABLE_E false // For all extruders
-#define DISABLE_INACTIVE_EXTRUDER true //disable only inactive extruders and keep active extruder enabled
+#define DISABLE_INACTIVE_EXTRUDER false //disable only inactive extruders and keep active extruder enabled
 
 // @section machine
 
@@ -479,46 +479,46 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = true; // set to true to invert the lo
   #if ENABLED(AUTO_BED_LEVELING_GRID)
 
     #define LEFT_PROBE_BED_POSITION 45
-    #define RIGHT_PROBE_BED_POSITION 85
-    #define FRONT_PROBE_BED_POSITION 75
-    #define BACK_PROBE_BED_POSITION 185
+#define RIGHT_PROBE_BED_POSITION 85
+#define FRONT_PROBE_BED_POSITION 75
+#define BACK_PROBE_BED_POSITION 185
 
-    #define MIN_PROBE_EDGE 10 // The Z probe minimum square sides can be no smaller than this.
+#define MIN_PROBE_EDGE 10 // The Z probe minimum square sides can be no smaller than this.
 
-    // Set the number of grid points per dimension.
-    // You probably don't need more than 3 (squared=9).
-    #define AUTO_BED_LEVELING_GRID_POINTS 3
+  // Set the number of grid points per dimension.
+  // You probably don't need more than 3 (squared=9).
+#define AUTO_BED_LEVELING_GRID_POINTS 3
 
-  #else  // !AUTO_BED_LEVELING_GRID
+#else  // !AUTO_BED_LEVELING_GRID
 
-      // Arbitrary points to probe.
-      // A simple cross-product is used to estimate the plane of the bed.
-      #define ABL_PROBE_PT_1_X 15
-      #define ABL_PROBE_PT_1_Y 180
-      #define ABL_PROBE_PT_2_X 15
-      #define ABL_PROBE_PT_2_Y 20
-      #define ABL_PROBE_PT_3_X 170
-      #define ABL_PROBE_PT_3_Y 20
+  // Arbitrary points to probe.
+  // A simple cross-product is used to estimate the plane of the bed.
+#define ABL_PROBE_PT_1_X 15
+#define ABL_PROBE_PT_1_Y 180
+#define ABL_PROBE_PT_2_X 15
+#define ABL_PROBE_PT_2_Y 20
+#define ABL_PROBE_PT_3_X 170
+#define ABL_PROBE_PT_3_Y 20
 
-  #endif // AUTO_BED_LEVELING_GRID
+#endif // AUTO_BED_LEVELING_GRID
 
   // Offsets to the Z probe relative to the nozzle tip.
   // X and Y offsets must be integers.
-  #define X_PROBE_OFFSET_FROM_EXTRUDER -20     // Z probe to nozzle X offset: -left  +right
-  #define Y_PROBE_OFFSET_FROM_EXTRUDER 0     // Z probe to nozzle Y offset: -front +behind
-  #define Z_PROBE_OFFSET_FROM_EXTRUDER -0.0  // Z probe to nozzle Z offset: -below (always!)
+#define X_PROBE_OFFSET_FROM_EXTRUDER -20     // Z probe to nozzle X offset: -left  +right
+#define Y_PROBE_OFFSET_FROM_EXTRUDER 0     // Z probe to nozzle Y offset: -front +behind
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -0.0  // Z probe to nozzle Z offset: -below (always!)
 
-  #define Z_RAISE_BEFORE_HOMING 10       // (in mm) Raise Z axis before homing (G28) for Z probe clearance.
-                                        // Be sure you have this distance over your Z_MAX_POS in case.
+#define Z_RAISE_BEFORE_HOMING 10       // (in mm) Raise Z axis before homing (G28) for Z probe clearance.
+  // Be sure you have this distance over your Z_MAX_POS in case.
 
-  #define XY_TRAVEL_SPEED 8000         // X and Y axis travel speed between probes, in mm/min.
+#define XY_TRAVEL_SPEED 8000         // X and Y axis travel speed between probes, in mm/min.
 
-  #define Z_RAISE_BEFORE_PROBING 5   // How much the Z axis will be raised before traveling to the first probing point.
-  #define Z_RAISE_BETWEEN_PROBINGS 5  // How much the Z axis will be raised when traveling from between next probing points.
-  #define Z_RAISE_AFTER_PROBING 5    // How much the Z axis will be raised after the last probing point.
+#define Z_RAISE_BEFORE_PROBING 5   // How much the Z axis will be raised before traveling to the first probing point.
+#define Z_RAISE_BETWEEN_PROBINGS 5  // How much the Z axis will be raised when traveling from between next probing points.
+#define Z_RAISE_AFTER_PROBING 5    // How much the Z axis will be raised after the last probing point.
 
-//#define Z_PROBE_END_SCRIPT "G1 Z10 F12000\nG1 X15 Y330\nG1 Z0.5\nG1 Z10" // These commands will be executed in the end of G29 routine.
-                                                                            // Useful to retract a deployable Z probe.
+  //#define Z_PROBE_END_SCRIPT "G1 Z10 F12000\nG1 X15 Y330\nG1 Z0.5\nG1 Z10" // These commands will be executed in the end of G29 routine.
+  // Useful to retract a deployable Z probe.
 
   //#define Z_PROBE_SLED // Turn on if you have a Z probe mounted on a sled like those designed by Charles Bell.
   //#define SLED_DOCKING_OFFSET 5 // The extra distance the X axis must travel to pickup the sled. 0 should be fine but you can push it further if you'd like.
@@ -527,19 +527,19 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = true; // set to true to invert the lo
   //If you have enabled the Bed Auto Leveling and are using the same Z Probe for Z Homing,
   //it is highly recommended you let this Z_SAFE_HOMING enabled!!!
 
-  #define Z_SAFE_HOMING   // This feature is meant to avoid Z homing with Z probe outside the bed area.
-                          // When defined, it will:
-                          // - Allow Z homing only after X and Y homing AND stepper drivers still enabled.
-                          // - If stepper drivers timeout, it will need X and Y homing again before Z homing.
-                          // - Position the Z probe in a defined XY point before Z Homing when homing all axis (G28).
-                          // - Block Z homing only when the Z probe is outside bed area.
+#define Z_SAFE_HOMING   // This feature is meant to avoid Z homing with Z probe outside the bed area.
+  // When defined, it will:
+  // - Allow Z homing only after X and Y homing AND stepper drivers still enabled.
+  // - If stepper drivers timeout, it will need X and Y homing again before Z homing.
+  // - Position the Z probe in a defined XY point before Z Homing when homing all axis (G28).
+  // - Block Z homing only when the Z probe is outside bed area.
 
-  #if ENABLED(Z_SAFE_HOMING)
+#if ENABLED(Z_SAFE_HOMING)
 
-    #define Z_SAFE_HOMING_X_POINT ((X_MIN_POS + X_MAX_POS) / 3)    // X point for Z homing when homing all axis (G28).
-    #define Z_SAFE_HOMING_Y_POINT ((Y_MIN_POS + Y_MAX_POS) / 2)    // Y point for Z homing when homing all axis (G28).
+#define Z_SAFE_HOMING_X_POINT ((X_MIN_POS + X_MAX_POS) / 3)    // X point for Z homing when homing all axis (G28).
+#define Z_SAFE_HOMING_Y_POINT ((Y_MIN_POS + Y_MAX_POS) / 2)    // Y point for Z homing when homing all axis (G28).
 
-  #endif
+#endif
 
   // Support for a dedicated Z probe endstop separate from the Z min endstop.
   // If you would like to use both a Z probe and a Z min endstop together,

@@ -75,7 +75,7 @@
 #define HEATER_0_PIN        10 // Hotend 1
 #define HEATER_1_PIN        10 // Hotend 2
 #define HEATER_2_PIN       10 // Hotend 3
-#define HEATER_3_PIN       17 // Hotend 4
+#define HEATER_3_PIN       -1 // Hotend 4 (was 17)
 #define HEATER_4_PIN        -1
 #define HEATER_5_PIN        -1
 #define HEATER_6_PIN        -1
