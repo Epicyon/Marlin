@@ -72,10 +72,10 @@
 #undef HEATER_1_PIN
 #undef HEATER_2_PIN
 #undef HEATER_3_PIN
-#define HEATER_0_PIN        10
-#define HEATER_1_PIN        9
-#define HEATER_2_PIN       16
-#define HEATER_3_PIN       17
+#define HEATER_0_PIN        10 // Hotend 1
+#define HEATER_1_PIN        10 // Hotend 2
+#define HEATER_2_PIN       10 // Hotend 3
+#define HEATER_3_PIN       17 // Hotend 4
 #define HEATER_4_PIN        -1
 #define HEATER_5_PIN        -1
 #define HEATER_6_PIN        -1
@@ -92,9 +92,9 @@
 #undef TEMP_2_PIN
 #undef TEMP_3_PIN
 #define TEMP_0_PIN         13
-#define TEMP_1_PIN         10   // ANALOG NUMBERING
-#define TEMP_2_PIN         12   // ANALOG NUMBERING
-#define TEMP_3_PIN         11   // ANALOG NUMBERING
+#define TEMP_1_PIN         13   // ANALOG NUMBERING
+#define TEMP_2_PIN         13   // ANALOG NUMBERING
+//#define TEMP_3_PIN         11   // ANALOG NUMBERING
 #define TC1                 4   // ANALOG NUMBERING Thermo couple on Azteeg X3Pro
 #define TC2                 5   // ANALOG NUMBERING Thermo couple on Azteeg X3Pro
 
