@@ -221,9 +221,9 @@ Here are some standard links for getting your machine calibrated:
 
 //Diamond Hotend
 //M301 P30.87 I2.59 D92.04
-#define  DEFAULT_Kp 62.14
-#define  DEFAULT_Ki 6.87
-#define  DEFAULT_Kd 140.49
+#define  DEFAULT_Kp 78.23
+#define  DEFAULT_Ki 13.72
+#define  DEFAULT_Kd 111.51
 
 
   // ORD Solutions - Rova3D Stock Heated Bed
@@ -513,7 +513,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = true; // set to true to invert the lo
   // X and Y offsets must be integers.
 #define X_PROBE_OFFSET_FROM_EXTRUDER -20     // Z probe to nozzle X offset: -left  +right
 #define Y_PROBE_OFFSET_FROM_EXTRUDER 0     // Z probe to nozzle Y offset: -front +behind
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -0.0  // Z probe to nozzle Z offset: -below (always!)
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -0.6  // Z probe to nozzle Z offset: -below (always!)
 
 #define Z_RAISE_BEFORE_HOMING 10       // (in mm) Raise Z axis before homing (G28) for Z probe clearance.
   // Be sure you have this distance over your Z_MAX_POS in case.
