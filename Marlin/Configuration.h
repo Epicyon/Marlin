@@ -413,13 +413,13 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = true; // set to true to invert the lo
 
 // @section machine
 
-// Travel limits after homing (units are in mm) 
+// Travel limits after homing (units are in mm)
 // !! Jewel - And must be defined as integers (i.e., no decimal points or the preprocessor throws strange errors)
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
 #define X_MAX_POS 175
-#define Y_MAX_POS 301
+#define Y_MAX_POS 270
 #define Z_MAX_POS 191
 
 //===========================================================================
@@ -485,16 +485,16 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = true; // set to true to invert the lo
 
   #if ENABLED(AUTO_BED_LEVELING_GRID)
 
-    #define LEFT_PROBE_BED_POSITION 45
-#define RIGHT_PROBE_BED_POSITION 85
-#define FRONT_PROBE_BED_POSITION 75
-#define BACK_PROBE_BED_POSITION 185
+    #define LEFT_PROBE_BED_POSITION 10
+#define RIGHT_PROBE_BED_POSITION 120
+#define FRONT_PROBE_BED_POSITION 10
+#define BACK_PROBE_BED_POSITION 225
 
 #define MIN_PROBE_EDGE 10 // The Z probe minimum square sides can be no smaller than this.
 
   // Set the number of grid points per dimension.
   // You probably don't need more than 3 (squared=9).
-#define AUTO_BED_LEVELING_GRID_POINTS 3
+#define AUTO_BED_LEVELING_GRID_POINTS 4
 
 #else  // !AUTO_BED_LEVELING_GRID
 
@@ -511,9 +511,9 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = true; // set to true to invert the lo
 
   // Offsets to the Z probe relative to the nozzle tip.
   // X and Y offsets must be integers.
-#define X_PROBE_OFFSET_FROM_EXTRUDER -20     // Z probe to nozzle X offset: -left  +right
+#define X_PROBE_OFFSET_FROM_EXTRUDER -52     // Z probe to nozzle X offset: -left  +right
 #define Y_PROBE_OFFSET_FROM_EXTRUDER 0     // Z probe to nozzle Y offset: -front +behind
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -0.6  // Z probe to nozzle Z offset: -below (always!)
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -0.55  // Z probe to nozzle Z offset: -below (always!)
 
 #define Z_RAISE_BEFORE_HOMING 10       // (in mm) Raise Z axis before homing (G28) for Z probe clearance.
   // Be sure you have this distance over your Z_MAX_POS in case.
